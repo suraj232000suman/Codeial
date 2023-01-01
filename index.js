@@ -1,10 +1,16 @@
 // Require express
 const express = require('express');
+//require cookie-parser
+const cookieParser = require('cookie-parser');
+
 const app = express();
 
 const port = 8000;
 
 const db = require('./config/mongoose');
+app.use(express.urlencoded());
+//telling app to use cookie parser in the middle ware
+app.use(cookieParser());
 // requireing express layouts
 const expressLayouts = require('express-ejs-layouts');
 
