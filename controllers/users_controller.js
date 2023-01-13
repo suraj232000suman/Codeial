@@ -43,5 +43,6 @@ module.exports.create = function(req,res){
 }
 //sign in and create a session for a user
 module.exports.createSession = function(req,res){
-   
+   console.log('in create-session controller')
+   return res.redirect('/');
 }
