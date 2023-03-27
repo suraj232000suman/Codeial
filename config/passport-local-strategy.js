@@ -4,17 +4,19 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 //authentication using passport
 passport.use(new LocalStrategy({
-    usernameField :'email'
-},function(email, password,done){ // args passing
+    usernameField :'email',
+    passReqToCallback: true
+},function(req,email, password,done){ // args passing
 //find a user and establish the identity
 User.findOne({email :email},function(err,user){
     if(err){
-        console.log("Error in finding user ------>passport");
+        req.flash('error',err);
+        // console.log("Error in finding user ------>passport");
         return done(err);
     }
     
     if(!user || user.password!=password){
-        console.log('Invalid username/password');
+        req.flash('success','Invalid UserId/Password !!');
         return done(null,false);
     }
     return done(null,user);//passing user
@@ -32,7 +34,6 @@ passport.deserializeUser(function(id,done){
     User.findById(id,function(err,user){
         if(err){
             console.log('Error in finding user ----->passport');
-
             return done(err);
         }
         return done(null,user);

@@ -1,0 +1,36 @@
+#sign-in-box{
+    background-color: white;
+    width: 330px;
+    padding: 2rem 1rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    h1{
+        font-size: 2rem;
+        color: black;
+        margin-bottom: 1.2rem;
+    }
+    input{
+        width: 92%;
+        outline: none;
+        border: 1px solid white;
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        background: #e4e4e4;
+    }
+    input[type=submit]{
+        background-color: rgb(52, 68, 218);
+        color: black;
+        font-size: 1rem;
+        width: 70%;
+        font-weight: 600;
+        transition: 0.5s;
+    }
+    input[type=submit]:hover{
+        width: 92%;
+        background-color: rgb(5, 19, 59);
+        color: white;
+    }
+}

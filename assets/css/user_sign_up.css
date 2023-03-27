@@ -1,0 +1,37 @@
+#sign-up-box {
+  background-color: white;
+  width: 330px;
+  padding: 2rem 1rem;
+  margin: 50px auto;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+#sign-up-box h1 {
+  font-size: 2rem;
+  color: darkgreen;
+  margin-bottom: 1.2rem;
+}
+#sign-up-box #sign-up-frm input {
+  width: 92%;
+  outline: none;
+  border: 1px solid white;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: #e4e4e4;
+}
+#sign-up-box #sign-up-frm input[type=submit] {
+  background-color: lightgreen;
+  color: black;
+  font-size: 1rem;
+  width: 70%;
+  font-weight: 600;
+  transition: 0.5s;
+}
+#sign-up-box #sign-up-frm input[type=submit]:hover {
+  width: 92%;
+  background-color: darkgreen;
+}
+
+/*# sourceMappingURL=user_sign_up.css.map */

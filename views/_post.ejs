@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/post.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<li id="post-<%=post._id%>" class="post-main-frame">
+    <main class="frame">
+        <div class="main-frame">
+            <div class="post-header header-bar">
+                <a href="" class="icon icon-plus"><i class='bx bxs-plus-circle'></i></a>
+                <small class="post-creator">
+                    <h4><%=post.user.name%></h4>
+                </small>
+        <% if(locals.user && locals.user.id==post.user.id){%>
+            <small>
+                <a href="/posts/destroy/<%=post.id%>" class="delete-post-btn icon icon-trash"><i class="bx bxs-trash"></i></a>
+            </small>
+        <%}%>
+    </div>
+    <div class="post-inner-frame">
+        <div class="content-box">
+            <p>
+                <%= post.content %>
+            </p>
+        </div>
+    </div>
+    </div>
+    <div class="footer-box">
+        <a href="" class="icon-like"><i class='icon bx bx-like'></i></a>
+        <a href="" class="icon-comments"><i class='icon bx bx-chat'></i></a>
+        <a href="" class="icon-share"><i class='icon bx bx-share'></i></a>
+        <button class="btn">Comment</button>
+    </div>
+    </main>
+    <aside class="aside-frame">
+        <div class="post-comments create-comment">
+            <% if(locals.user){ %>
+                <form  action="/Comments/create" id="post-<%= post._id %>-comments-form" method="POST">
+                    <input type="text" name="Content" placeholder="Add Comments..." style="width: 180px;" required>
+                    <input type="hidden" name="post" value="<%=post._id%>" >
+                    <input type="submit" value="ADD" style="width: 60px;">
+                </form>
+            <% } %>
+        </div>
+            <div class="post-comments-list comments-box">
+                <ul id="post-comments-<%=post._id%>" class="comments-list-container">
+                    <% for(comment of post.comments){ %>
+                        <%-include('_comment')-%>
+                    <%}%>
+                </ul>
+            </div>
+    </aside>
+</li>

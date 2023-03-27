@@ -1,0 +1,11 @@
+<div>
+    <p>Hi <%= token.user.name %>!</p>
+    <br>
+    <br>
+    <h3>Your token for changing your password:</h3>
+    <% var params = token.user._id+"/"+token.accessToken %>
+    <h2><a href="http://localhost:8000/users/reset-link/<%=params%>">Update Password</a></h2>
+    <br>
+    <br>
+    <p>Thanks !<br>postman(codial)</p>
+</div>

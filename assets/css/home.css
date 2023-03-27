@@ -1,3 +1,43 @@
-body{
-    background-color: aqua;
+#home-container {
+  display: flex;
+  background: white;
 }
+#home-container #space {
+  width: 20%;
+  background-color: darkgreen;
+}
+#home-container #feed-posts {
+  width: 60%;
+  padding: 10px;
+}
+#home-container #user-friends {
+  width: 20%;
+  height: 100vw;
+  background-color: lightgreen;
+}
+#home-container #user-friends h4 {
+  height: 50px;
+  background-color: darkgreen;
+  color: white;
+  width: 90%;
+  font-size: 2rem;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px auto;
+}
+#home-container #user-friends #frnd {
+  height: 30px;
+  width: 70%;
+  background-color: rgb(160, 170, 19);
+  border-radius: 3px;
+  margin: 5px auto;
+}
+#home-container #user-friends #frnd a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  padding: 3px 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/*# sourceMappingURL=home.css.map */

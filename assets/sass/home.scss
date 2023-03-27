@@ -1,0 +1,42 @@
+#home-container{
+    display: flex;
+    background: white;
+    #space{
+        width: 20%;
+        background-color: darkgreen;
+    }
+    #feed-posts{
+        width: 60%;
+        padding: 10px;
+    }
+    #user-friends{
+        width: 20%;
+        height: 100vw;
+        background-color: lightgreen;
+        h4{
+            height: 50px;
+            background-color: darkgreen;
+            color: white;
+            width: 90%;
+            font-size: 2rem;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 10px auto;
+            // text-align: center;
+        }
+        #frnd{
+            height: 30px;
+            width: 70%;
+            background-color: rgb(160, 170, 19);
+            border-radius: 3px;
+            margin: 5px auto;
+            a{
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: white;
+                padding: 3px 10px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+    }
+}

@@ -12,7 +12,12 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportJwt = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oath2-strategy');
 const MongoStore = require('connect-mongo')(session);
+
+const flash=require('connect-flash');
+const customMware=require('./config/middleware');
 
 app.use(express.urlencoded());
 //telling app to use cookie parser in the middle ware
@@ -56,9 +61,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
+app.use(flash());
+app.use(customMware.setFlash);
+
 app.use('/',require('./routes'));
 //telling in which folder our app should look out for static file
 app.use(express.static('./assets'));
+//make the upload path availaible to the browser
+app.use('/uploads',express.static(__dirname+'/uploads'));
 
 app.listen(port,function(err){
     if(err){
@@ -66,3 +76,4 @@ app.listen(port,function(err){
     }
     console.log(`Server is running on port : ${port}`);
 });
+

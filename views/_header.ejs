@@ -1,9 +1,10 @@
-<header>
-    page header
-
-    <ul>
+<link rel="stylesheet" href="/css/header.css">
+<header id="header-bar">
+    <h1 id="logo-font">Codeial</h1>
+    <ul id="login">
+        <a class="nav-font" href="/">Home</a>
         <% if(locals.user){ %>
-            <li><a href="/users/profile">
+            <li><a href="/users/profile/<%=user.id%>">
                 <%= user.name %>
             </a>
             </li>
